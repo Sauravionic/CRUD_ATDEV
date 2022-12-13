@@ -1,23 +1,14 @@
 package ionic.crud;
 
-import ionic.crud.Models.Student;
-import ionic.crud.Services.StudentRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
 @SpringBootApplication
-public class CrudApplication implements CommandLineRunner {
+public class CrudApplication {
 
-	@Autowired
-	private StudentRepository studentRepository;
 	public static void main(String[] args) {
 		SpringApplication.run(CrudApplication.class, args);
 	}
 
-	@Override
-	public void run(String... args) throws Exception {
-//		studentRepository.save(new Student(1L, "Saurav", "Srivastava", "Sarnath", ""))
-	}
 }
