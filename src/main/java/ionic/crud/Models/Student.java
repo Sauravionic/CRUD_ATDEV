@@ -4,13 +4,10 @@ import lombok.NonNull;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.validation.constraints.NotNull;
-
 @Document("student")
 public class Student {
     @Id
     private String id;
-    @NotNull(message = "User's first name must not be null")
     private String firstName;
     private String lastName;
     private String address;
@@ -61,5 +58,16 @@ public class Student {
 
     public void setPhoneNo(String phoneNo) {
         this.phoneNo = phoneNo;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id='" + id + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", address='" + address + '\'' +
+                ", phoneNo='" + phoneNo + '\'' +
+                '}';
     }
 }
