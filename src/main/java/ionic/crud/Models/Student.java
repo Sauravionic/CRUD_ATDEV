@@ -4,10 +4,13 @@ import lombok.NonNull;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import javax.validation.constraints.NotNull;
+
 @Document("student")
 public class Student {
     @Id
     private String id;
+    @NotNull(message = "User's first name must not be null")
     private String firstName;
     private String lastName;
     private String address;
